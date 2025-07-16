@@ -62,6 +62,37 @@ body {
     mask-position: center;
 }
 
+.logo-container {
+    position: relative;
+    padding: 0.5rem; /* p-2 */
+    border-radius: 0.75rem; /* rounded-xl */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    /* Responsive height */
+    height: 3rem; /* default (h-12) */
+}
+
+@media (min-width: 640px) {
+    .logo-container {
+        height: 4rem; /* sm:h-16 */
+    }
+}
+
+@media (min-width: 768px) {
+    .logo-container {
+        height: 5rem; /* md:h-20 */
+    }
+}
+
+.logo-container.pulsating-shadow-small {
+    animation: pulse-shadow 4s ease-in-out infinite;
+}
+
+
 /* Анімація руху градієнта для логотипу */
 @keyframes gradientShift {
     0% {
