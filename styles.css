@@ -170,7 +170,7 @@ body {
 .hero-title-sub {
     /* Мін. розмір 40px (раніше 32px), макс. 72px, між ними - 8% ширини екрана */
     /* Adjusted min-size to match hero-title-main better on mobile and fit on one line */
-    font-size: clamp(2.5rem, 1vw + 1rem, 4.5rem);
+    font-size: clamp(2.5rem, 2.5vw + 0rem, 4.5rem);
 }
 
 .hero-paragraph {
@@ -237,3 +237,73 @@ body {
         .mobile-menu a:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
+
+
+.hero-wrapper {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title-main {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #c084fc, #f472b6, #ef4444);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap; /* Щоб не переносився */
+}
+
+.hero-title-sub {
+    font-size: clamp(10%rem, 2vw, 4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #c084fc, #f472b6, #ef4444);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+
+
+.hero-paragraph {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #e5e5e5;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+.hero-title-block {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    overflow-wrap: normal;
+}
+
+/* Адаптація на маленьких екранах */
+@media (max-width: 640px) {
+    .hero-title-main {
+        font-size: 2.6rem; 
+        white-space: nowrap;
+    }
+
+    .hero-title-sub {
+        font-size: 1.6rem; 
+        white-space: nowrap;
+    }
+
+    .hero-paragraph {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+
