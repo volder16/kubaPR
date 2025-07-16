@@ -4,7 +4,7 @@ body {
     color: #e0e0e0;
 }
 
-/* Стилі для логотипу KUBA */
+/* Стилі для анімації градієнта (використовується, наприклад, для кнопок) */
 @keyframes gradient-animation {
     0% {
         background-position: 0% 50%;
@@ -19,6 +19,7 @@ body {
     }
 }
 
+/* Стилі для анімації пульсуючої тіні */
 @keyframes pulse-shadow {
     0% {
         box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.4);
@@ -33,6 +34,7 @@ body {
     }
 }
 
+/* Клас для елементів з пульсуючою тінню */
 .pulsating-shadow-small {
     animation: pulse-shadow 4s ease-in-out infinite;
 }
@@ -45,17 +47,22 @@ body {
     background: linear-gradient(270deg, #a78bfa, #ec4899, #ef4444);
     background-size: 600% 600%; /* Збільшений розмір для анімації */
     animation: gradientShift 6s ease infinite; /* Анімація руху градієнта */
-    /* Застосування зображення логотипу як маски */
+    /* Застосування зображення логотипу як маски. 
+       Переконайтеся, що шляхи 'img/KUBA_W (2).png' та 'img/KUBA_W.png' правильні,
+       і що ці файли є білими зображеннями на ПРОЗОРОМУ фоні.
+    */
     -webkit-mask-image: url('img/KUBA_W (2).png');
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: contain; /* Масштабуємо маску, щоб вона помістилася */
     -webkit-mask-position: center; /* Центруємо маску */
-    mask-image: url('img/KUBA_W(2).png'); /* Для інших браузерів */
+
+    mask-image: url('img/KUBA_W.png'); /* Для інших браузерів (шлях виправлено з KUBA_W(.png) */
     mask-repeat: no-repeat;
     mask-size: contain;
     mask-position: center;
 }
 
+/* Анімація руху градієнта для логотипу */
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
