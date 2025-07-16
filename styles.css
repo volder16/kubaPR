@@ -77,14 +77,16 @@ body {
     }
 }
 
-/* Стилі для фонового відео/зображення в Hero Section */
+/* Стилі для фонової гіфки в Hero Section */
 .hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-image: url('img/Material/fon-Syte.gif'); /* Шлях до вашої гіфки */
+    background-size: cover;
+    background-position: center;
     z-index: -1;
     filter: brightness(0.4); /* затемнення */
 }
