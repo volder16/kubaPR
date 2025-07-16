@@ -45,7 +45,7 @@ body {
     height: 100%;
     /* Градієнт, який буде переливатися */
     background: linear-gradient(270deg, #a78bfa, #ec4899, #ef4444);
-    background-size: 900% 900%; /* Збільшений розмір для анімації */
+    background-size: 1200% 1200%; /* Збільшений розмір для анімації */
     animation: gradientShift 6s ease infinite; /* Анімація руху градієнта */
     /* Застосування зображення логотипу як маски. 
        Переконайтеся, що шляхи 'img/KUBA_W (2).png' та 'img/KUBA_W.png' правильні,
