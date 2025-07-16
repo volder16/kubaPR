@@ -51,7 +51,7 @@ body {
        Переконайтеся, що шляхи 'img/KUBA_W (2).png' та 'img/KUBA_W.png' правильні,
        і що ці файли є білими зображеннями на ПРОЗОРОМУ фоні.
     */
-    -webkit-mask-image: url('img/KUBA_W (2).png');
+    -webkit-mask-image: url('img/KUBA_W(2).png');
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: contain; /* Масштабуємо маску, щоб вона помістилася */
     -webkit-mask-position: center; /* Центруємо маску */
