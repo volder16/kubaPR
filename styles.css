@@ -88,9 +88,7 @@ body {
     }
 }
 
-.logo-container.pulsating-shadow-small {
-    animation: pulse-shadow 4s ease-in-out infinite;
-}
+
 
 
 /* Анімація руху градієнта для логотипу */
