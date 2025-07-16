@@ -6,6 +6,13 @@ const contactForm = document.getElementById('contactForm'); // Отримання форми
 const successMessage = document.getElementById('successMessage'); // Отримання елемента повідомлення
 const currentYearSpan = document.getElementById('currentYear'); // Елемент для року
 
+// Нові елементи для мобільного меню
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link'); // Всі посилання в мобільному меню
+
+
 // Функція для відкриття модального вікна
 function openModal() {
     if (briefModal) {
@@ -60,13 +67,6 @@ if (contactForm) {
             successMessage.classList.remove('hidden');
         }
 
-        // Очистити форму після невеликої затримки, щоб користувач встиг побачити повідомлення
-        // Або можна закривати модальне вікно і скидати форму після того, як користувач закриє повідомлення
-        // Для простоти, поки що просто очистимо і закриємо.
-        // closeModal(); // Можна закривати одразу або після повідомлення
-        // this.reset(); // Очистити форму
-
-        // Можна зробити так, щоб повідомлення зникало через деякий час, а потім закривалось модальне вікно
         setTimeout(() => {
             if (successMessage) {
                 successMessage.classList.add('hidden');
@@ -100,3 +100,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile menu functionality
+if (hamburgerBtn && mobileMenu && closeMobileMenuBtn) {
+    hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active'); // Add 'active' class to show the menu
+    });
+
+    closeMobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('active'); // Remove 'active' class to hide the menu
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+    });
+
+    // Close mobile menu if clicked outside
+    mobileMenu.addEventListener('click', (event) => {
+        if (event.target === mobileMenu) {
+            mobileMenu.classList.remove('active');
+        }
+    });
+}

@@ -47,7 +47,7 @@ body {
     background: linear-gradient(270deg, #a78bfa, #ec4899, #ef4444);
     background-size: 1200% 1200%; /* Збільшений розмір для анімації */
     animation: gradientShift 6s ease infinite; /* Анімація руху градієнта */
-    /* Застосування зображення логотипу як маски. 
+    /* Застосування зображення логотипу як маски.
        Переконайтеся, що шляхи 'img/KUBA_W (2).png' та 'img/KUBA_W.png' правильні,
        і що ці файли є білими зображеннями на ПРОЗОРОМУ фоні.
     */
@@ -161,19 +161,79 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-    .video-container-horizontal:hover,
-    .video-container-vertical:hover {
-        transform: scale(1.02);
+/* Стилі для адаптивного тексту на головному екрані */
+.hero-title-main {
+    /* Мін. розмір 40px, макс. 96px, між ними - 10% ширини екрана */
+    font-size: clamp(2.5rem, 10vw, 6rem);
+}
+
+.hero-title-sub {
+    /* Мін. розмір 40px (раніше 32px), макс. 72px, між ними - 8% ширини екрана */
+    /* Adjusted min-size to match hero-title-main better on mobile and fit on one line */
+    font-size: clamp(2.5rem, 1vw + 1rem, 4.5rem);
+}
+
+.hero-paragraph {
+    /* Мін. розмір 16px, макс. 24px, між ними - 2.5% ширини екрана */
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.video-container-horizontal:hover,
+.video-container-vertical:hover {
+    transform: scale(1.02);
+}
+
+.video-container-horizontal iframe,
+.video-container-horizontal video,
+.video-container-vertical iframe,
+.video-container-vertical video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Додано для iframe, щоб прибрати стандартну рамку */
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.95); /* Semi-transparent dark background */
+    z-index: 100; /* Ensure it's above other content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Start off-screen */
+}
+
+    .mobile-menu.active {
+        transform: translateX(0); /* Slide in */
     }
 
-    .video-container-horizontal iframe,
-    .video-container-horizontal video,
-    .video-container-vertical iframe,
-    .video-container-vertical video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0; /* Додано для iframe, щоб прибрати стандартну рамку */
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
     }
+
+    .mobile-menu li {
+        margin-bottom: 1.5rem;
+    }
+
+    .mobile-menu a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.8rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+        .mobile-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
